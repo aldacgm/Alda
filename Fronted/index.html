@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alda2 System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+
+            font-family: 'Poppins', sans-serif;
+
+            background: #000;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            position: relative;
+
+        }
+
+        .background-glow{
+
+            position: absolute;
+
+            width: 700px;
+            height: 700px;
+
+            background:
+            radial-gradient(circle, rgba(255,0,0,0.12), transparent 70%);
+
+            filter: blur(90px);
+
+            animation: pulse 5s infinite alternate;
+
+        }
+
+        @keyframes pulse{
+
+            from{
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            to{
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+        }
+
+        .container{
+
+            position: relative;
+            z-index: 2;
+
+            text-align: center;
+
+            width: 100%;
+            max-width: 1200px;
+
+            padding: 40px;
+
+        }
+
+        .title{
+
+            color: white;
+
+            font-size: 70px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+            0 0 10px rgba(255,255,255,0.6),
+            0 0 30px rgba(255,255,255,0.3);
+
+            animation: fadeDown 1s ease;
+
+        }
+
+        .subtitle{
+
+            color: rgba(255,255,255,0.7);
+
+            font-size: 18px;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            line-height: 1.8;
+
+            margin-bottom: 70px;
+
+            animation: fadeUp 1.2s ease;
+
+        }
+
+        .cards{
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .card{
+
+            width: 320px;
+
+            height: 220px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.03);
+
+            backdrop-filter: blur(8px);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            transition: 0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        .card::before{
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 25px;
+
+            padding: 2px;
+
+            background: linear-gradient(
+                135deg,
+                #ff0000,
+                #ff5e00,
+                #ff0000
+            );
+
+            -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite: xor;
+
+            mask-composite: exclude;
+
+        }
+
+        .card:hover{
+
+            transform: translateY(-12px) scale(1.03);
+
+            box-shadow:
+            0 0 20px rgba(255,0,0,0.5),
+            0 0 40px rgba(255,94,0,0.3);
+
+        }
+
+        .productos:hover{
+
+            background: rgba(255,0,0,0.08);
+
+        }
+
+        .categorias:hover{
+
+            background: rgba(255,94,0,0.08);
+
+        }
+
+        .icon{
+
+            font-size: 60px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .card h2{
+
+            color: white;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .card p{
+
+            color: rgba(255,255,255,0.6);
+
+            font-size: 14px;
+
+            padding: 0 25px;
+
+        }
+
+        .productos:hover h2{
+
+            color: #ff3c3c;
+
+        }
+
+        .categorias:hover h2{
+
+            color: #ff8c42;
+
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        @keyframes fadeDown{
+
+            from{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes fadeUp{
+
+            from{
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @media(max-width: 768px){
+
+            .title{
+                font-size: 45px;
+            }
+
+            .subtitle{
+                font-size: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <div class="container">
+
+        <h1 class="title">
+            Bienvenidos a mi sistema, soy Alda
+        </h1>
+
+        <p class="subtitle">
+            Sistema administrativo moderno desarrollado con Node.js, Express y MySQL.
+            Gestiona productos y categorías desde una interfaz elegante con efectos neon,
+            diseño futurista y navegación dinámica.
+        </p>
+
+        <div class="cards">
+
+            <a href="pages/productos.html">
+
+                <div class="card productos">
+
+                    <div class="icon">📦</div>
+
+                    <h2>Productos</h2>
+
+                    <p>
+                        Administra inventario, stock, precios y edición de productos.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a href="pages/categorias.html">
+
+                <div class="card categorias">
+
+                    <div class="icon">📂</div>
+
+                    <h2>Categorías</h2>
+
+                    <p>
+                        Organiza y controla las categorías del sistema de manera visual.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
