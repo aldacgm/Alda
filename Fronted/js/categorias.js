@@ -1,51 +1,71 @@
+console.log("CARGÓ EL JS 🚀");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    listarCategorias();
+
+});
+
 async function listarCategorias(){
 
-    const response = await fetch(
-        "http://localhost:3000/api/categorias"
-    );
+    try {
 
-    const categorias = await response.json();
+        const response = await fetch(
+            "http://localhost:3000/api/categorias"
+        );
 
-    const tabla = document.getElementById("tablaCategorias");
+        const categorias = await response.json();
 
-    tabla.innerHTML = "";
+        console.log(categorias);
 
-    categorias.forEach(categoria => {
+        const tabla = document.getElementById("tablaCategorias");
 
-        tabla.innerHTML += `
+        console.log(tabla);
 
-            <tr id="fila-${categoria.CATId}">
+        tabla.innerHTML = "";
 
-                <td>${categoria.CATId}</td>
+        categorias.forEach(categoria => {
 
-                <td>${categoria.CATNombr}</td>
+            tabla.innerHTML += `
 
-                <td>${categoria.CATDescri}</td>
+                <tr id="fila-${categoria.CATId}">
 
-                <td>${categoria.CATEstado}</td>
+                    <td>${categoria.CATId}</td>
 
-                <td>
+                    <td>${categoria.CATNombr}</td>
 
-                    <a href="editarCategoria.html?id=${categoria.CATId}">
-                        <button class="btn">
-                            Editar
+                    <td>${categoria.CATDescri}</td>
+
+                    <td>${categoria.CATEstado}</td>
+
+                    <td>
+
+                        <a href="editarCategoria.html?id=${categoria.CATId}">
+                            <button class="btn">
+                                Editar
+                            </button>
+                        </a>
+
+                        <button
+                            class="btn btn-delete"
+                            onclick="ocultarFila(${categoria.CATId})"
+                        >
+                            Eliminar
                         </button>
-                    </a>
 
-                    <button
-                        class="btn btn-delete"
-                        onclick="ocultarFila(${categoria.CATId})"
-                    >
-                        Eliminar
-                    </button>
+                    </td>
 
-                </td>
+                </tr>
 
-            </tr>
+            `;
 
-        `;
+        });
 
-    });
+    } catch(error){
+
+        console.log("ERROR:", error);
+
+    }
 
 }
 
@@ -66,5 +86,3 @@ function ocultarFila(id){
     }, 500);
 
 }
-
-listarCategorias();

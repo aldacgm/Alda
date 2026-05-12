@@ -6,13 +6,19 @@ const getCategorias = (req, res) => {
 
         if(error){
 
-            console.log(error);
+            console.log("ERROR MYSQL:", error);
 
             res.status(500).json({
-                mensaje: error
+
+                mensaje: error.message,
+
+                codigo: error.code
+
             });
 
         } else {
+
+            console.log("RESULTADOS:", resultados);
 
             res.json(resultados);
 
@@ -30,10 +36,14 @@ const getCategoria = (req, res) => {
 
         if(error){
 
-            console.log(error);
+            console.log("ERROR MYSQL:", error);
 
             res.status(500).json({
-                mensaje: error
+
+                mensaje: error.message,
+
+                codigo: error.code
+
             });
 
         } else {
@@ -56,10 +66,14 @@ const postCategoria = (req, res) => {
 
         if(error){
 
-            console.log(error);
+            console.log("ERROR MYSQL:", error);
 
             res.status(500).json({
-                mensaje: error
+
+                mensaje: error.message,
+
+                codigo: error.code
+
             });
 
         } else {
@@ -67,7 +81,9 @@ const postCategoria = (req, res) => {
             console.log(resultado);
 
             res.json({
+
                 mensaje: "Categoría registrada 🚀"
+
             });
 
         }
@@ -86,10 +102,14 @@ const putCategoria = (req, res) => {
 
         if(error){
 
-            console.log(error);
+            console.log("ERROR MYSQL:", error);
 
             res.status(500).json({
-                mensaje: error
+
+                mensaje: error.message,
+
+                codigo: error.code
+
             });
 
         } else {
@@ -97,7 +117,9 @@ const putCategoria = (req, res) => {
             console.log(resultado);
 
             res.json({
+
                 mensaje: "Categoría actualizada 🚀"
+
             });
 
         }
