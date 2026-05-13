@@ -1,5 +1,5 @@
 /* ========================= */
-/* 🌌 ESTILO FUTURISTA NEON */
+/* 💊 ESTILO FARMACIA PREMIUM */
 /* ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -14,19 +14,26 @@ body{
 
     font-family: 'Poppins', sans-serif;
 
-    background: #000;
+    background:
+    linear-gradient(
+        135deg,
+        #eafaf4,
+        #f6fffc
+    );
 
     min-height: 100vh;
 
     padding: 40px;
 
-    color: white;
+    color: #16352b;
 
     overflow-x: hidden;
 
     position: relative;
 
 }
+
+/* 🌿 EFECTO DE FONDO */
 
 body::before{
 
@@ -40,6 +47,38 @@ body::before{
     top: -200px;
     left: -100px;
 
+    background:
+    radial-gradient(
+        circle,
+        rgba(0, 200, 140, 0.18),
+        transparent 70%
+    );
+
+    filter: blur(120px);
+
+    z-index: -1;
+
+}
+
+body::after{
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    bottom: -180px;
+    right: -120px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0, 140, 255, 0.12),
+        transparent 70%
+    );
+
     filter: blur(100px);
 
     z-index: -1;
@@ -47,20 +86,13 @@ body::before{
 }
 
 /* ========================= */
-/* 📦 PRODUCTOS */
+/* 🧴 TEMAS */
 /* ========================= */
-
-.productos-theme::before{
-
-    background:
-    radial-gradient(circle, rgba(0,255,255,0.15), transparent 70%);
-
-}
 
 .productos-theme .container{
 
     box-shadow:
-    0 0 25px rgba(0,255,255,0.18);
+    0 10px 40px rgba(0,180,120,0.15);
 
 }
 
@@ -68,55 +100,48 @@ body::before{
 
     background: linear-gradient(
         135deg,
-        #00cfff,
-        #0066ff
+        #00b894,
+        #00cec9
     );
 
     box-shadow:
-    0 0 15px rgba(0,207,255,0.45);
+    0 8px 25px rgba(0,184,148,0.28);
 
 }
 
 .productos-theme .btn:hover{
 
+    transform: translateY(-2px);
+
     box-shadow:
-    0 0 20px rgba(0,207,255,0.8),
-    0 0 40px rgba(0,102,255,0.5);
+    0 12px 30px rgba(0,184,148,0.4);
 
 }
 
 .productos-theme input:focus,
 .productos-theme select:focus{
 
-    border: 1px solid #00cfff;
+    border: 1px solid #00b894;
 
     box-shadow:
-    0 0 15px rgba(0,207,255,0.5);
+    0 0 0 4px rgba(0,184,148,0.12);
 
 }
 
 .productos-theme th{
 
-    text-shadow:
-    0 0 8px rgba(0,207,255,0.5);
+    color: #0f5d4d;
 
 }
 
 /* ========================= */
-/* 🍊 CATEGORIAS */
+/* 🌿 CATEGORIAS */
 /* ========================= */
-
-.categorias-theme::before{
-
-    background:
-    radial-gradient(circle, rgba(255,140,0,0.18), transparent 70%);
-
-}
 
 .categorias-theme .container{
 
     box-shadow:
-    0 0 25px rgba(255,140,0,0.2);
+    0 10px 40px rgba(0,140,255,0.12);
 
 }
 
@@ -124,42 +149,42 @@ body::before{
 
     background: linear-gradient(
         135deg,
-        #ff7b00,
-        #ffae00
+        #0099ff,
+        #00c6ff
     );
 
     box-shadow:
-    0 0 15px rgba(255,123,0,0.45);
+    0 8px 25px rgba(0,153,255,0.22);
 
 }
 
 .categorias-theme .btn:hover{
 
+    transform: translateY(-2px);
+
     box-shadow:
-    0 0 20px rgba(255,123,0,0.8),
-    0 0 40px rgba(255,174,0,0.5);
+    0 12px 30px rgba(0,153,255,0.35);
 
 }
 
 .categorias-theme input:focus,
 .categorias-theme select:focus{
 
-    border: 1px solid #ff7b00;
+    border: 1px solid #0099ff;
 
     box-shadow:
-    0 0 15px rgba(255,123,0,0.5);
+    0 0 0 4px rgba(0,153,255,0.12);
 
 }
 
 .categorias-theme th{
 
-    text-shadow:
-    0 0 8px rgba(255,123,0,0.5);
+    color: #0b4f80;
 
 }
 
 /* ========================= */
-/* 🌌 CONTENEDOR */
+/* 🏥 CONTENEDOR */
 /* ========================= */
 
 .container{
@@ -172,18 +197,18 @@ body::before{
 
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.72);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.8);
 
     animation: aparecer 0.8s ease;
 
 }
 
 /* ========================= */
-/* 🚀 TITULOS */
+/* 💎 TITULOS */
 /* ========================= */
 
 .top{
@@ -204,19 +229,21 @@ body::before{
 
 h1{
 
-    font-size: 60px;
+    font-size: 56px;
 
     font-weight: 700;
 
-    color: white;
+    color: #114c3a;
+
+    letter-spacing: -1px;
 
     text-shadow:
-    0 0 10px rgba(255,255,255,0.4);
+    0 2px 10px rgba(0,0,0,0.06);
 
 }
 
 /* ========================= */
-/* ✨ TABLAS */
+/* 📋 TABLAS */
 /* ========================= */
 
 table{
@@ -227,15 +254,20 @@ table{
 
     overflow: hidden;
 
-    border-radius: 20px;
+    border-radius: 24px;
 
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.75);
 
 }
 
 thead{
 
-    background: rgba(255,255,255,0.06);
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,184,148,0.12),
+        rgba(0,153,255,0.08)
+    );
 
 }
 
@@ -243,11 +275,11 @@ th{
 
     padding: 22px;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-weight: 600;
 
 }
 
@@ -257,9 +289,9 @@ td{
 
     text-align: center;
 
-    color: rgba(255,255,255,0.85);
+    color: #45635b;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 
     transition: 0.3s;
 
@@ -267,14 +299,14 @@ td{
 
 tr:hover td{
 
-    background: rgba(255,255,255,0.03);
+    background: rgba(0,184,148,0.04);
 
-    color: white;
+    color: #123b31;
 
 }
 
 /* ========================= */
-/* 🔥 BOTONES */
+/* ✨ BOTONES */
 /* ========================= */
 
 .btn{
@@ -283,17 +315,43 @@ tr:hover td{
 
     padding: 14px 28px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.4s;
+    transition: 0.35s;
+
+}
+
+/* 🔥 BOTON ELIMINAR */
+
+.btn-delete{
+
+    background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #c9184a
+    ) !important;
+
+    margin-left: 10px;
+
+    box-shadow:
+    0 8px 20px rgba(255,77,109,0.22);
+
+}
+
+.btn-delete:hover{
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 12px 25px rgba(255,77,109,0.4);
 
 }
 
@@ -303,7 +361,7 @@ tr:hover td{
 
 form{
 
-    margin-top: 30px;
+    margin-top: 35px;
 
 }
 
@@ -319,9 +377,11 @@ label{
 
     margin-bottom: 10px;
 
-    color: rgba(255,255,255,0.85);
+    color: #356558;
 
     font-size: 15px;
+
+    font-weight: 500;
 
 }
 
@@ -332,13 +392,13 @@ select{
 
     padding: 18px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(0,0,0,0.08);
 
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.88);
 
-    color: white;
+    color: #18463a;
 
     font-size: 15px;
 
@@ -350,7 +410,7 @@ select{
 
 input::placeholder{
 
-    color: rgba(255,255,255,0.35);
+    color: rgba(0,0,0,0.3);
 
 }
 
@@ -389,7 +449,7 @@ input::placeholder{
     }
 
     h1{
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .top{
@@ -405,26 +465,5 @@ input::placeholder{
     td{
         padding: 14px;
     }
-    /* 🔥 BOTON ELIMINAR */
-
-.btn-delete{
-
-    background: linear-gradient(
-        135deg,
-        #ff003c,
-        #990000
-    ) !important;
-
-    margin-left: 10px;
-
-}
-
-.btn-delete:hover{
-
-    box-shadow:
-    0 0 20px rgba(255,0,60,0.8),
-    0 0 40px rgba(153,0,0,0.5);
-
-}
 
 }
